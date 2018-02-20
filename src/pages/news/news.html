@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            SeaLions News
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div global-text [innerHTML]="global"></div>
+    <ion-list>
+        <ion-item no-lines *ngFor="let post of posts">
+
+            <div flex-grid post>
+                <div picture>
+                    <img hero-photo [src]="post.hero_image.src" alt="{{ post.hero_image.alt }}" />
+                </div>
+                <div content>
+                    <span title>{{ post.title }}</span>
+                    <span date>{{ post.date }}</span>
+                </div>
+            </div>
+
+            <!--
+      {{ post.hero_image.src }}
+      {{ post.hero_image.alt }}
+      {{ post.title }}
+      {{ post.date }}
+      {{ post.body }}
+      -->
+        </ion-item>
+    </ion-list>
+</ion-content>

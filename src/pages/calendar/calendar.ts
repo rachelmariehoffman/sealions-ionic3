@@ -4,19 +4,26 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Component({
-	selector: 'page-home',
-	templateUrl: 'home.html'
+	selector: 'page-calendar',
+	templateUrl: 'calendar.html'
 })
-export class HomePage {
+export class CalendarPage {
 
-	global: any
+	global: any;
+	logo: any;
+	games: any;
 
 	constructor(public navCtrl: NavController, public http: Http) {
 
 		let url = "https://dev-sealions.pantheonsite.io/api/";
 
 		this.http.get(url + 'sealions-global-text').map(res => res.json()).subscribe(data => {
-			this.global = data.global_text[0].home;
+			this.global = data.global_text[0].game_schedule;
+			this.logo = data.global_text[0].sealions_logo;
+		});
+
+		this.http.get(url + 'sealions-games').map(res => res.json()).subscribe(data => {
+			this.games = data.games;
 		});
 
 	}

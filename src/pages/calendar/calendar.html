@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            SeaLions Calendar
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div global-text [innerHTML]="global"></div>
+
+    <ion-list>
+        <ion-item no-lines *ngFor="let game of games">
+
+            <div flex-grid top>
+                <div flex-col flex-left>SeaLions</div>
+                <div flex-col flex-right>Opponent</div>
+            </div>
+
+            <div flex-grid bottom>
+                <div flex-col flex-left>
+                    <img logo [src]="logo.src" alt="logo.alt">
+                </div>
+                <div flex-col flex-middle>
+                    {{ game.sealions_score }}
+                </div>
+                <div flex-col flex-middle date>
+                    {{ game.date }}<br> {{ game.time }}<br>
+                </div>
+                <div flex-col flex-middle>
+                    {{ game.opponents_score }}
+                </div>
+                <div flex-col flex-right>
+                    <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt">
+                </div>
+            </div>
+
+            <!--
+      {{ game.opponent }}
+      {{ game.date }}
+      {{ game.time }}
+      {{ game.home_or_away }}
+      {{ game.location }}
+      {{ game.win_or_loss }}
+      {{ game.opponents_score }}
+      {{ game.opponent_logo.src }}
+      {{ game.opponent_logo.alt }}
+      {{ game.game_summary }}
+      -->
+        </ion-item>
+    </ion-list>
+
+</ion-content>

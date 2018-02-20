@@ -1,17 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            SeaLions Home
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+    <div landing-logo>
+
+        <img src="assets/imgs/sealions_logo.png">
+
+    </div>
+
+    <div global-text [innerHTML]="global"></div>
+
+    <div social-logos>
+
+        <a href="https://www.facebook.com/SanDiegoSeaLions">
+            <img src="assets/imgs/facebook.png" alt="Facebook Logo">
+        </a>
+
+        <a href="https://twitter.com/SDSeaLions">
+            <img src="assets/imgs/twitter.png" alt="Twitter Logo">
+        </a>
+
+        <a href="https://www.instagram.com/sd_sealions/">
+            <img src="assets/imgs/instagram.png" alt="Instagram Logo">
+        </a>
+
+        <a href="http://www.wpsl.info">
+            <img src="assets/imgs/color_wpsl_logo.png" alt="WPSL Logo">
+        </a>
+
+        <a href="http://sealionsoccer.com/">
+            <img src="assets/imgs/sealions_logo.png" alt="SeaLions Logo">
+        </a>
+
+    </div>
+
 </ion-content>

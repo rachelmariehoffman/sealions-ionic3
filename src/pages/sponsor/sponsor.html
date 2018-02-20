@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            SeaLions Sponsor
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div global-text [innerHTML]="global"></div>
+    <ion-list>
+        <ion-item no-lines *ngFor="let sponsor of sponsors">
+
+            <div flex-grid sponsor>
+                <div picture>
+                    <img sponsor-photo [src]="sponsor.logo.src" alt="{{ sponsor.logo.alt }}" />
+                </div>
+                <div content>
+                    <span title>{{ sponsor.title }}</span> <br>
+                    <span body>{{ sponsor.body }}</span> <br>
+                </div>
+            </div>
+
+            <!--      
+      {{ sponsor.title }} <br>
+      {{ sponsor.body }} <br>
+      {{ sponsor.website }} <br>
+      {{ sponsor.qr_code }} <br>
+      {{ sponsor.logo.src }} <br>
+      {{ sponsor.logo.alt }} <br>
+      -->
+        </ion-item>
+    </ion-list>
+</ion-content>

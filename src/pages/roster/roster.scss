@@ -1,0 +1,38 @@
+page-roster {
+    [player] {
+        background-color: white;
+    }
+    [picture] {
+        width: 75px;
+    }
+    [player-photo] {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+        display: block;
+    }
+    [content] {
+        width: calc(100% - 75px);
+        white-space: initial;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+    [number] {
+        display: flex;
+        justify-content: center;
+        width: 60px;
+        margin-right: 10px;
+        color: $sealions-blue-dark;
+        font-size: 40px;
+        font-weight: 600;
+    }
+    [name] {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    [position] {
+        font-size: 12px;
+        color: $sealions-gray-medium;
+    }
+}

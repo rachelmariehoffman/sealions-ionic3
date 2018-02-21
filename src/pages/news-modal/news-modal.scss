@@ -1,0 +1,39 @@
+page-news-modal {
+    ion-buttons>ion-icon {
+        height: 0px;
+        color: $sealions-gray-light;
+        padding-right: 10px;
+    }
+    [post] {
+        background-color: white;
+    }
+    [picture] {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    [content] {
+        width: 100%;
+        padding: 20px;
+    }
+    [title] {
+        font-size: 18px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: initial;
+        overflow: hidden;
+    }
+    [date] {
+        font-size: 16px;
+        color: $sealions-gray-medium;
+    }
+    [body] {
+        font-size: 14px;
+        color: $sealions-gray-medium;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        white-space: initial;
+    }
+}

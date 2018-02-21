@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -12,9 +12,9 @@ export class RosterPage {
 	global: any
 	players: any;
 
-	constructor(public navCtrl: NavController, public http: Http) {
+	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
 
-		let url = "https://dev-sealions.pantheonsite.io/api/";
+		let url = "http://sealions.customersuccessmarketing.com/api/";
 
 		this.http.get(url + 'sealions-global-text').map(res => res.json()).subscribe(data => {
 			this.global = data.global_text[0].roster;
@@ -24,5 +24,10 @@ export class RosterPage {
 			this.players = data.players;
 		});
 
+	}
+
+	openModal(player) {
+		const playerModal = this.modalCtrl.create('RosterModalPage', { data: player });
+		playerModal.present();
 	}
 }

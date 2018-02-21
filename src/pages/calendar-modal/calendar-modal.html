@@ -1,0 +1,56 @@
+<ion-header (click)="closeModal()">
+    <ion-navbar>
+        <ion-title>
+            Game
+        </ion-title>
+        <ion-buttons end>
+            <ion-icon name="close"></ion-icon>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-item no-lines>
+
+        <div flex-grid top>
+            <div flex-col flex-left>SeaLions</div>
+            <div flex-col flex-right>Opponent</div>
+        </div>
+
+        <div flex-grid bottom>
+            <div flex-col flex-left>
+                <img logo [src]="logo.src" alt="logo.alt">
+            </div>
+            <div flex-col flex-middle>
+                {{ game.sealions_score }}
+            </div>
+            <div flex-col flex-middle date>
+                {{ game.date }}<br> {{ game.time }}<br>
+            </div>
+            <div flex-col flex-middle>
+                {{ game.opponents_score }}
+            </div>
+            <div flex-col flex-right>
+                <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt">
+            </div>
+        </div>
+
+    </ion-item>
+
+
+</ion-content>
+
+<!-- 
+    {{ game.opponent }}
+    {{ game.date }}
+    {{ game.time }}
+    {{ game.home_or_away }}
+    {{ game.location }}
+    {{ game.win_or_loss }}
+    {{ game.opponents_score }}
+    {{ game.opponent_logo.src }}
+    {{ game.opponent_logo.alt }}
+    {{ game.game_summary }} 
+-->

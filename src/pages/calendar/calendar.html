@@ -11,7 +11,7 @@
     <div global-text [innerHTML]="global"></div>
 
     <ion-list>
-        <ion-item no-lines *ngFor="let game of games">
+        <ion-item no-lines *ngFor="let game of games" (click)="openModal(game)">
 
             <div flex-grid top>
                 <div flex-col flex-left>SeaLions</div>
@@ -36,19 +36,20 @@
                 </div>
             </div>
 
-            <!--
-      {{ game.opponent }}
-      {{ game.date }}
-      {{ game.time }}
-      {{ game.home_or_away }}
-      {{ game.location }}
-      {{ game.win_or_loss }}
-      {{ game.opponents_score }}
-      {{ game.opponent_logo.src }}
-      {{ game.opponent_logo.alt }}
-      {{ game.game_summary }}
-      -->
         </ion-item>
     </ion-list>
 
 </ion-content>
+
+<!--
+    {{ game.opponent }}
+    {{ game.date }}
+    {{ game.time }}
+    {{ game.home_or_away }}
+    {{ game.location }}
+    {{ game.win_or_loss }}
+    {{ game.opponents_score }}
+    {{ game.opponent_logo.src }}
+    {{ game.opponent_logo.alt }}
+    {{ game.game_summary }}
+-->

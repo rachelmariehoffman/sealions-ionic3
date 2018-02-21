@@ -13,7 +13,7 @@ export class HomePage {
 
 	constructor(public navCtrl: NavController, public http: Http) {
 
-		let url = "https://dev-sealions.pantheonsite.io/api/";
+		let url = "http://sealions.customersuccessmarketing.com/api/";
 
 		this.http.get(url + 'sealions-global-text').map(res => res.json()).subscribe(data => {
 			this.global = data.global_text[0].home;

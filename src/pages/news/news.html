@@ -7,9 +7,11 @@
 </ion-header>
 
 <ion-content>
+
     <div global-text [innerHTML]="global"></div>
+
     <ion-list>
-        <ion-item no-lines *ngFor="let post of posts">
+        <ion-item no-lines *ngFor="let post of posts" (click)="openModal(post)">
 
             <div flex-grid post>
                 <div picture>
@@ -21,13 +23,14 @@
                 </div>
             </div>
 
-            <!--
-      {{ post.hero_image.src }}
-      {{ post.hero_image.alt }}
-      {{ post.title }}
-      {{ post.date }}
-      {{ post.body }}
-      -->
         </ion-item>
     </ion-list>
 </ion-content>
+
+<!--
+    {{ post.hero_image.src }}
+    {{ post.hero_image.alt }}
+    {{ post.title }}
+    {{ post.date }}
+    {{ post.body }}
+-->

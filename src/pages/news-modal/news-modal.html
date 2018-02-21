@@ -1,0 +1,35 @@
+<ion-header (click)="closeModal()">
+    <ion-navbar>
+        <ion-title>
+            Post
+        </ion-title>
+        <ion-buttons end>
+            <ion-icon name="close"></ion-icon>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div post>
+        <div picture>
+            <img [src]="post.hero_image.src" alt="{{ post.hero_image.alt }}" />
+        </div>
+        <div content>
+            <span title>{{ post.title }}</span>
+            <span date>{{ post.date }}</span>
+            <hr>
+            <span body>{{ post.body }}</span>
+        </div>
+    </div>
+
+</ion-content>
+
+<!--
+    {{ post.hero_image.src }}
+    {{ post.hero_image.alt }}
+    {{ post.title }}
+    {{ post.date }}
+    {{ post.body }}
+-->

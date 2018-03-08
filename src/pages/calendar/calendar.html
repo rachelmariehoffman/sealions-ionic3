@@ -13,14 +13,20 @@
     <ion-list>
         <ion-item no-lines *ngFor="let game of games" (click)="openModal(game)">
 
-            <div flex-grid top>
-                <div flex-col flex-left>SeaLions</div>
-                <div flex-col flex-right>Opponent</div>
+            <div flex-grid top *ngIf="game.home_or_away === 'Home'">
+                <div flex-col flex-left> SeaLions </div>
+                <div flex-col flex-right> {{ game.opponent }} </div>
+            </div>
+
+            <div flex-grid top *ngIf="game.home_or_away != 'Home'">
+                <div flex-col flex-left> {{ game.opponent }} </div>
+                <div flex-col flex-right> SeaLions </div>
             </div>
 
             <div flex-grid bottom>
                 <div flex-col flex-left>
-                    <img logo [src]="logo.src" alt="logo.alt">
+                    <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away === 'Home'">
+                    <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away != 'Home'">
                 </div>
                 <div flex-col flex-middle>
                     {{ game.sealions_score }}
@@ -32,7 +38,8 @@
                     {{ game.opponents_score }}
                 </div>
                 <div flex-col flex-right>
-                    <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt">
+                    <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away === 'Home'">
+                    <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away != 'Home'">
                 </div>
             </div>
 
@@ -42,12 +49,18 @@
 </ion-content>
 
 <!--
+    {{ game.location }}
+    {{ game.game_summary }}
+-->
+
+<!--
     {{ game.opponent }}
     {{ game.date }}
     {{ game.time }}
     {{ game.home_or_away }}
     {{ game.location }}
     {{ game.win_or_loss }}
+    {{ game.sealions_score }}
     {{ game.opponents_score }}
     {{ game.opponent_logo.src }}
     {{ game.opponent_logo.alt }}

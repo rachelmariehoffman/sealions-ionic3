@@ -19,6 +19,7 @@ export class CalendarModalPage {
 		this.gameInstance = this.navParams.get('data');
 		this.game = this.gameInstance.game;
 		this.logo = this.gameInstance.logo;
+		console.log(this.game);
 	}
 
 	closeModal() {

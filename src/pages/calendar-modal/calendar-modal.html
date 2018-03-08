@@ -14,14 +14,20 @@
 
     <ion-item no-lines>
 
-        <div flex-grid top>
-            <div flex-col flex-left>SeaLions</div>
-            <div flex-col flex-right>Opponent</div>
+        <div flex-grid top *ngIf="game.home_or_away === 'Home'">
+            <div flex-col flex-left> SeaLions </div>
+            <div flex-col flex-right> {{ game.opponent }} </div>
+        </div>
+
+        <div flex-grid top *ngIf="game.home_or_away != 'Home'">
+            <div flex-col flex-left> {{ game.opponent }} </div>
+            <div flex-col flex-right> SeaLions </div>
         </div>
 
         <div flex-grid bottom>
             <div flex-col flex-left>
-                <img logo [src]="logo.src" alt="logo.alt">
+                <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away === 'Home'">
+                <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away != 'Home'">
             </div>
             <div flex-col flex-middle>
                 {{ game.sealions_score }}
@@ -33,12 +39,24 @@
                 {{ game.opponents_score }}
             </div>
             <div flex-col flex-right>
-                <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt">
+                <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away === 'Home'">
+                <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away != 'Home'">
             </div>
         </div>
 
     </ion-item>
 
+    <div details>
+        <span title>Add to Calendar <ion-icon name="calendar"></ion-icon></span>
+        <span body>{{ game.date }}</span>
+        <hr>
+        <span title>Location <ion-icon name="map"></ion-icon></span>
+        <span body>{{ game.location }}</span>
+        <hr>
+        <span title>Game Summary</span>
+        <span body *ngIf="game.summary">{{ game.summary }}</span>
+        <span body *ngIf="!game.summary">Game summary coming soon!</span>
+    </div>
 
 </ion-content>
 

@@ -5,6 +5,9 @@ page-roster-modal {
         padding-right: 10px;
     }
     [player] {
+        background-color: white;
+    }
+    [picture] {
         position: relative;
         max-width: 100%;
         width: 100%;
@@ -19,11 +22,28 @@ page-roster-modal {
         width: 100%;
         font-size: 18px;
     }
-    [player-text-overlay] {
+    [text-overlay] {
         color: white;
         line-height: 40px;
         background: rgb(82, 109, 178);
         background: rgba(82, 109, 178, 0.7);
-        padding: 10px;
+        padding: 8px;
+    }
+    [content] {
+        width: 100%;
+        padding: 20px;
+    }
+    [title] {
+        font-size: 18px;
+        font-weight: 600;
+        display: -webkit-box;
+        white-space: initial;
+    }
+    [body] {
+        font-size: 14px;
+        color: $sealions-gray-medium;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        white-space: initial;
     }
 }

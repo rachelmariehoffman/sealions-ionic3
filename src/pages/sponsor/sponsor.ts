@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -12,7 +12,7 @@ export class SponsorPage {
 	global: any
 	sponsors: any;
 
-	constructor(public navCtrl: NavController, public http: Http) {
+	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
 
 		let url = "http://sealions.customersuccessmarketing.com/api/";
 
@@ -24,5 +24,10 @@ export class SponsorPage {
 			this.sponsors = data.sponsors;
 		});
 
+	}
+
+	openModal(sponsor) {
+		const sponsorModal = this.modalCtrl.create('SponsorModalPage', { data: sponsor });
+		sponsorModal.present();
 	}
 }

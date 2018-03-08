@@ -9,7 +9,7 @@
 <ion-content>
     <div global-text [innerHTML]="global"></div>
     <ion-list>
-        <ion-item no-lines *ngFor="let sponsor of sponsors">
+        <ion-item no-lines *ngFor="let sponsor of sponsors" (click)="openModal(sponsor)">
 
             <div flex-grid sponsor>
                 <div picture>

@@ -1,0 +1,39 @@
+<ion-header (click)="closeModal()">
+    <ion-navbar>
+        <ion-title>
+            Sponsor
+        </ion-title>
+        <ion-buttons end>
+            <ion-icon name="close"></ion-icon>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div sponsor>
+        <div picture>
+            <img [src]="sponsor.logo.src" alt="{{ sponsor.logo.alt }}" />
+        </div>
+        <div content>
+            <span title>{{ sponsor.title }}</span>
+            <span website>{{ sponsor.website }}</span>
+            <hr>
+            <span body>{{ sponsor.body }}</span>
+        </div>
+        <div picture *ngIf="sponsor.qr_code">
+            <img [src]="sponsor.qr_code" alt="QR Code" />
+        </div>
+    </div>
+
+</ion-content>
+
+<!--      
+    {{ sponsor.title }} <br>
+    {{ sponsor.body }} <br>
+    {{ sponsor.website }} <br>
+    {{ sponsor.qr_code }} <br>
+    {{ sponsor.logo.src }} <br>
+    {{ sponsor.logo.alt }} <br>
+-->

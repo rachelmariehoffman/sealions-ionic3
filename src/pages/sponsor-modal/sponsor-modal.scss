@@ -1,4 +1,4 @@
-page-news-modal {
+page-sponsor-modal {
     ion-buttons>ion-icon {
         height: 0px;
         color: $sealions-gray-light;
@@ -8,9 +8,9 @@ page-news-modal {
         background-color: white;
     }
     [picture] {
-        width: 100%;
-        object-fit: cover;
-        display: block;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
     }
     [content] {
         width: 100%;
@@ -22,7 +22,7 @@ page-news-modal {
         display: -webkit-box;
         white-space: initial;
     }
-    [date] {
+    [website] {
         font-size: 16px;
         color: $sealions-gray-medium;
     }

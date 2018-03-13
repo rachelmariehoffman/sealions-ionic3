@@ -47,12 +47,16 @@
     </ion-item>
 
     <div details>
-        <span title>Add to Calendar <ion-icon name="calendar"></ion-icon></span>
+        <span (click)="addToCalendar()">
+            <span title>Add to Calendar <ion-icon name="calendar"></ion-icon></span>
         <span body>{{ game.date }}</span>
+        </span>
         <hr>
-        <span title>Location <ion-icon name="map"></ion-icon></span>
+        <span (click)="openInMaps()">
+            <span title>Open in Maps <ion-icon name="map"></ion-icon></span>
         <span body>{{ game.location }}</span>
         <hr>
+        </span>
         <span title>Game Summary</span>
         <span body *ngIf="game.summary">{{ game.summary }}</span>
         <span body *ngIf="!game.summary">Game summary coming soon!</span>

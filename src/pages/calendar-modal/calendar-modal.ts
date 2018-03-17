@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController, NavParams } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
-import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 
 @IonicPage()

@@ -25793,7 +25793,7 @@ ion-navbar.toolbar {
 ion-content,
 ion-navbar,
 ion-tabs {
-  font-family: "Lato";
+  font-family: "Lato", "Noto Sans";
 }
 
 ion-content,

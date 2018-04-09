@@ -14,14 +14,9 @@ export class CalendarPage {
 	games: any;
 
 	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
-	// 	this.getData();
-	// }
+	}
 
-	// ngDoCheck() {
-	// 	this.getData();
-	// }
-
-	// getData() {
+	ionViewDidEnter() {	
 		let url = "http://sealions.customersuccessmarketing.com/api/";
 
 		this.logo = 'assets/imgs/sealions_logo.png';

@@ -25945,6 +25945,7 @@ page-calendar-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
+  font-size: 25px;
 }
 
 page-calendar-modal [top] {
@@ -26042,6 +26043,7 @@ page-home-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
+  font-size: 25px;
 }
 
 page-home-modal [content] {
@@ -26102,6 +26104,7 @@ page-news-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
+  font-size: 25px;
 }
 
 page-news-modal [picture] {
@@ -26193,6 +26196,7 @@ page-roster-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
+  font-size: 25px;
 }
 
 page-roster-modal [picture] {

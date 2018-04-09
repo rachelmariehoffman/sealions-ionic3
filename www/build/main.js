@@ -129,15 +129,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var HomePage = (function () {
     function HomePage(navCtrl, http, modalCtrl) {
-        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
+    }
+    HomePage.prototype.ionViewDidEnter = function () {
+        var _this = this;
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
-            _this.global = data.global_text[0].home;
+            _this.global = data.global_text[0].news_posts;
         });
-    }
+    };
     HomePage.prototype.openModal = function (post) {
         var homeModal = this.modalCtrl.create('HomeModalPage');
         homeModal.present();
@@ -180,16 +182,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var NewsPage = (function () {
     function NewsPage(navCtrl, http, modalCtrl) {
-        // 	this.getData();
-        // }
-        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        // ngDoCheck() {
-        // 	this.getData();
-        // }
-        // getData() {
+    }
+    NewsPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].news_posts;
@@ -197,7 +195,7 @@ var NewsPage = (function () {
         this.http.get(url + 'sealions-posts').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.posts = data.posts;
         });
-    }
+    };
     NewsPage.prototype.openModal = function (post) {
         var newsModal = this.modalCtrl.create('NewsModalPage', { data: post });
         newsModal.present();
@@ -240,16 +238,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CalendarPage = (function () {
     function CalendarPage(navCtrl, http, modalCtrl) {
-        // 	this.getData();
-        // }
-        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        // ngDoCheck() {
-        // 	this.getData();
-        // }
-        // getData() {
+    }
+    CalendarPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.logo = 'assets/imgs/sealions_logo.png';
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
@@ -259,7 +253,7 @@ var CalendarPage = (function () {
         this.http.get(url + 'sealions-games').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.games = data.games;
         });
-    }
+    };
     CalendarPage.prototype.openModal = function (game) {
         var gameInstance = {
             game: game,
@@ -306,16 +300,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var RosterPage = (function () {
     function RosterPage(navCtrl, http, modalCtrl) {
-        // 	this.getData();
-        // }
-        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        // ngDoCheck() {
-        // 	this.getData();
-        // }
-        // getData() {
+    }
+    RosterPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].roster;
@@ -323,7 +313,7 @@ var RosterPage = (function () {
         this.http.get(url + 'sealions-roster').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.players = data.players;
         });
-    }
+    };
     RosterPage.prototype.openModal = function (player) {
         var playerModal = this.modalCtrl.create('RosterModalPage', { data: player });
         playerModal.present();
@@ -366,16 +356,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var SponsorPage = (function () {
     function SponsorPage(navCtrl, http, modalCtrl) {
-        // 	this.getData();
-        // }
-        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        // ngDoCheck() {
-        // 	this.getData();
-        // }
-        // getData() {
+    }
+    SponsorPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].sponsors;
@@ -383,7 +369,7 @@ var SponsorPage = (function () {
         this.http.get(url + 'sealions-sponsors').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.sponsors = data.sponsors;
         });
-    }
+    };
     SponsorPage.prototype.openModal = function (sponsor) {
         var sponsorModal = this.modalCtrl.create('SponsorModalPage', { data: sponsor });
         sponsorModal.present();

@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([5],{
 
 /***/ 112:
 /***/ (function(module, exports) {
@@ -23,18 +23,22 @@ webpackEmptyAsyncContext.id = 112;
 var map = {
 	"../pages/calendar-modal/calendar-modal.module": [
 		280,
+		4
+	],
+	"../pages/home-modal/home-modal.module": [
+		281,
 		3
 	],
 	"../pages/news-modal/news-modal.module": [
-		281,
+		282,
 		2
 	],
 	"../pages/roster-modal/roster-modal.module": [
-		282,
+		283,
 		1
 	],
 	"../pages/sponsor-modal/sponsor-modal.module": [
-		283,
+		284,
 		0
 	]
 };
@@ -124,20 +128,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(navCtrl, http) {
+    function HomePage(navCtrl, http, modalCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
+        this.modalCtrl = modalCtrl;
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].home;
         });
     }
+    HomePage.prototype.openModal = function (post) {
+        var homeModal = this.modalCtrl.create('HomeModalPage');
+        homeModal.present();
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/`<ion-header>\n    <ion-navbar>\n        <ion-title>\n            SeaLions Home\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <div landing-logo>\n\n        <img src="assets/imgs/sealions_logo.png">\n\n    </div>\n\n    <div global-text [innerHTML]="global"></div>\n\n    <div social-logos>\n\n        <a href="https://www.facebook.com/SanDiegoSeaLions">\n            <img src="assets/imgs/facebook.png" alt="Facebook Logo">\n        </a>\n\n        <a href="https://twitter.com/SDSeaLions">\n            <img src="assets/imgs/twitter.png" alt="Twitter Logo">\n        </a>\n\n        <a href="https://www.instagram.com/sd_sealions/">\n            <img src="assets/imgs/instagram.png" alt="Instagram Logo">\n        </a>\n\n        <a href="http://www.wpsl.info">\n            <img src="assets/imgs/color_wpsl_logo.png" alt="WPSL Logo">\n        </a>\n\n        <a href="http://sealionsoccer.com/">\n            <img src="assets/imgs/sealions_logo.png" alt="SeaLions Logo">\n        </a>\n\n    </div>\n\n</ion-content>`/*ion-inline-end:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/`<ion-header>\n    <ion-navbar>\n        <ion-title>\n            SeaLions Home\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <div landing-logo>\n\n        <img src="assets/imgs/sealions_logo.png">\n\n    </div>\n\n    <div global-text [innerHTML]="global"></div>\n\n    <div social-logos>\n\n        <a href="https://www.facebook.com/SanDiegoSeaLions">\n            <img src="assets/imgs/facebook.png" alt="Facebook Logo">\n        </a>\n\n        <a href="https://twitter.com/SDSeaLions">\n            <img src="assets/imgs/twitter.png" alt="Twitter Logo">\n        </a>\n\n        <a href="https://www.instagram.com/sd_sealions/">\n            <img src="assets/imgs/instagram.png" alt="Instagram Logo">\n        </a>\n\n        <a href="http://www.wpsl.info">\n            <img src="assets/imgs/color_wpsl_logo.png" alt="WPSL Logo">\n        </a>\n\n        <a href="http://sealionsoccer.com/">\n            <img src="assets/imgs/sealions_logo.png" alt="SeaLions Logo">\n        </a>\n\n    </div>\n\n    <button about-us (click)="openModal()">\n        Meet The Developers\n    </button>\n\n</ion-content>`/*ion-inline-end:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -171,10 +180,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var NewsPage = (function () {
     function NewsPage(navCtrl, http, modalCtrl) {
+        // 	this.getData();
+        // }
         var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
+        // ngDoCheck() {
+        // 	this.getData();
+        // }
+        // getData() {
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].news_posts;
@@ -225,11 +240,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CalendarPage = (function () {
     function CalendarPage(navCtrl, http, modalCtrl) {
+        // 	this.getData();
+        // }
         var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
+        // ngDoCheck() {
+        // 	this.getData();
+        // }
+        // getData() {
         var url = "http://sealions.customersuccessmarketing.com/api/";
+        this.logo = 'assets/imgs/sealions_logo.png';
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].game_schedule;
             _this.logo = data.global_text[0].sealions_logo;
@@ -284,10 +306,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var RosterPage = (function () {
     function RosterPage(navCtrl, http, modalCtrl) {
+        // 	this.getData();
+        // }
         var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
+        // ngDoCheck() {
+        // 	this.getData();
+        // }
+        // getData() {
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].roster;
@@ -338,10 +366,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var SponsorPage = (function () {
     function SponsorPage(navCtrl, http, modalCtrl) {
+        // 	this.getData();
+        // }
         var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
+        // ngDoCheck() {
+        // 	this.getData();
+        // }
+        // getData() {
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].sponsors;
@@ -442,6 +476,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/calendar-modal/calendar-modal.module#CalendarModalPageModule', name: 'CalendarModalPage', segment: 'calendar-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home-modal/home-modal.module#HomeModalPageModule', name: 'HomeModalPage', segment: 'home-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/news-modal/news-modal.module#NewsModalPageModule', name: 'NewsModalPage', segment: 'news-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/roster-modal/roster-modal.module#RosterModalPageModule', name: 'RosterModalPage', segment: 'roster-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sponsor-modal/sponsor-modal.module#SponsorModalPageModule', name: 'SponsorModalPage', segment: 'sponsor-modal', priority: 'low', defaultHistory: [] }

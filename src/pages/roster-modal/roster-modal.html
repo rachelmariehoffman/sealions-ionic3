@@ -12,7 +12,6 @@
 
 <ion-content>
 
-    <!-- <div player> -->
     <div picture>
         <img player-photo [src]="player.headshot.src" alt="{{ player.headshot.alt }}" />
         <div player-name>
@@ -46,7 +45,6 @@
         <span body *ngIf="player.bio">{{ player.bio }}</span>
         <span body *ngIf="!player.bio">Player bio coming soon!</span>
     </div>
-    <!-- </div> -->
 
 </ion-content>
 

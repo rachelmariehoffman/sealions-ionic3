@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 280:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarModalPageModule", function() { return CalendarModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModalPageModule", function() { return HomeModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__calendar_modal__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_modal__ = __webpack_require__(286);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CalendarModalPageModule = (function () {
-    function CalendarModalPageModule() {
+var HomeModalPageModule = (function () {
+    function HomeModalPageModule() {
     }
-    CalendarModalPageModule = __decorate([
+    HomeModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__calendar_modal__["a" /* CalendarModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__home_modal__["a" /* HomeModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__calendar_modal__["a" /* CalendarModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home_modal__["a" /* HomeModalPage */]),
             ],
         })
-    ], CalendarModalPageModule);
-    return CalendarModalPageModule;
+    ], HomeModalPageModule);
+    return HomeModalPageModule;
 }());
 
-//# sourceMappingURL=calendar-modal.module.js.map
+//# sourceMappingURL=home-modal.module.js.map
 
 /***/ }),
 
-/***/ 284:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarModalPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_launch_navigator__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,46 +56,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-var CalendarModalPage = (function () {
-    function CalendarModalPage(viewCtrl, navParams, calendar, launchNavigator) {
+/**
+ * Generated class for the HomeModalPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HomeModalPage = (function () {
+    function HomeModalPage(viewCtrl, navParams) {
         this.viewCtrl = viewCtrl;
         this.navParams = navParams;
-        this.calendar = calendar;
-        this.launchNavigator = launchNavigator;
     }
-    CalendarModalPage.prototype.ionViewWillLoad = function () {
-        this.gameInstance = this.navParams.get('data');
-        this.game = this.gameInstance.game;
-        this.logo = this.gameInstance.logo;
-        console.log(this.game);
-    };
-    CalendarModalPage.prototype.closeModal = function () {
+    HomeModalPage.prototype.closeModal = function () {
         this.viewCtrl.dismiss();
     };
-    CalendarModalPage.prototype.addToCalendar = function () {
-        this.title = 'Sealions Game vs. ' + this.game.opponent;
-        this.gameStart = this.game.date + ' ' + this.game.time;
-        this.startDate = new Date(this.gameStart);
-        this.gameEnd = new Date(this.gameStart);
-        this.gameEnd.setHours(this.gameEnd.getHours() + 2);
-        this.endDate = new Date(this.gameEnd);
-        this.calendar.createEventInteractively(this.title, this.game.location, null, this.startDate, this.endDate);
+    HomeModalPage.prototype.contactUs = function () {
+        window.location.href = "mailto:doug@customersuccessmarketing.com";
     };
-    CalendarModalPage.prototype.openInMaps = function () {
-        this.launchNavigator.navigate(this.game.location).then(function (success) { return console.log('Launched navigator'); }, function (error) { return console.log('Error launching navigator', error); });
-    };
-    CalendarModalPage = __decorate([
+    HomeModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calendar-modal',template:/*ion-inline-start:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/calendar-modal/calendar-modal.html"*/`<ion-header (click)="closeModal()">\n    <ion-navbar>\n        <ion-title>\n            Game\n        </ion-title>\n        <ion-buttons end>\n            <ion-icon name="close"></ion-icon>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n\n    <ion-item no-lines>\n\n        <div flex-grid top *ngIf="game.home_or_away === \'Home\'">\n            <div flex-col flex-left> SeaLions </div>\n            <div flex-col flex-right> {{ game.opponent }} </div>\n        </div>\n\n        <div flex-grid top *ngIf="game.home_or_away != \'Home\'">\n            <div flex-col flex-left> {{ game.opponent }} </div>\n            <div flex-col flex-right> SeaLions </div>\n        </div>\n\n        <div flex-grid bottom>\n            <div flex-col flex-left>\n                <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away === \'Home\'">\n                <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away != \'Home\'">\n            </div>\n            <div flex-col flex-middle>\n                {{ game.sealions_score }}\n            </div>\n            <div flex-col flex-middle date>\n                {{ game.date }}<br> {{ game.time }}<br>\n            </div>\n            <div flex-col flex-middle>\n                {{ game.opponents_score }}\n            </div>\n            <div flex-col flex-right>\n                <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away === \'Home\'">\n                <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away != \'Home\'">\n            </div>\n        </div>\n\n    </ion-item>\n\n    <div details>\n        <span (click)="addToCalendar()">\n            <span title>Add to Calendar <ion-icon name="calendar"></ion-icon></span>\n        <span body>{{ game.date }}</span>\n        </span>\n        <hr>\n        <span (click)="openInMaps()">\n            <span title>Open in Maps <ion-icon name="map"></ion-icon></span>\n        <span body>{{ game.location }}</span>\n        <hr>\n        </span>\n        <span title>Game Summary</span>\n        <span body *ngIf="game.summary">{{ game.summary }}</span>\n        <span body *ngIf="!game.summary">Game summary coming soon!</span>\n    </div>\n\n</ion-content>\n\n<!-- \n    {{ game.opponent }}\n    {{ game.date }}\n    {{ game.time }}\n    {{ game.home_or_away }}\n    {{ game.location }}\n    {{ game.win_or_loss }}\n    {{ game.opponents_score }}\n    {{ game.opponent_logo.src }}\n    {{ game.opponent_logo.alt }}\n    {{ game.game_summary }} \n-->`/*ion-inline-end:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/calendar-modal/calendar-modal.html"*/,
+            selector: 'page-home-modal',template:/*ion-inline-start:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home-modal/home-modal.html"*/`<ion-header (click)="closeModal()">\n    <ion-navbar>\n        <ion-title>\n            About Us\n        </ion-title>\n        <ion-buttons end>\n            <ion-icon name="close"></ion-icon>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n\n    <div content>\n        <span full-name>Douglas Hoffman</span>\n        <span description>Back End Developer - Drupal</span>\n        <hr>\n        <span full-name>Rachel Hoffman</span>\n        <span description>Front End Developer - Angular and Ionic</span>\n    </div>\n\n    <button (click)="contactUs()">Contact Us</button>\n\n</ion-content>`/*ion-inline-end:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home-modal/home-modal.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__["a" /* Calendar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_launch_navigator__["a" /* LaunchNavigator */]])
-    ], CalendarModalPage);
-    return CalendarModalPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], HomeModalPage);
+    return HomeModalPage;
 }());
 
-//# sourceMappingURL=calendar-modal.js.map
+//# sourceMappingURL=home-modal.js.map
 
 /***/ })
 

@@ -12,20 +12,20 @@
 
 <ion-content>
 
-    <div sponsor>
-        <div picture>
-            <img [src]="sponsor.logo.src" alt="{{ sponsor.logo.alt }}" />
-        </div>
-        <div content>
-            <span title>{{ sponsor.title }}</span>
-            <span website>{{ sponsor.website }}</span>
-            <hr>
-            <span body>{{ sponsor.body }}</span>
-        </div>
-        <div picture *ngIf="sponsor.qr_code">
-            <img [src]="sponsor.qr_code" alt="QR Code" />
-        </div>
+    <!-- <div sponsor> -->
+    <div picture>
+        <img [src]="sponsor.logo.src" alt="{{ sponsor.logo.alt }}" />
     </div>
+    <div content>
+        <span title>{{ sponsor.title }}</span>
+        <span website>{{ sponsor.website }}</span>
+        <hr>
+        <span body>{{ sponsor.body }}</span>
+    </div>
+    <div picture *ngIf="sponsor.qr_code">
+        <img [src]="sponsor.qr_code" alt="QR Code" />
+    </div>
+    <!-- </div> -->
 
 </ion-content>
 

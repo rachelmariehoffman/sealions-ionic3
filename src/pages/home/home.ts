@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -11,7 +11,7 @@ export class HomePage {
 
 	global: any
 
-	constructor(public navCtrl: NavController, public http: Http) {
+	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
 
 		let url = "http://sealions.customersuccessmarketing.com/api/";
 
@@ -19,5 +19,10 @@ export class HomePage {
 			this.global = data.global_text[0].home;
 		});
 
+	}
+
+	openModal(post) {
+		const homeModal = this.modalCtrl.create('HomeModalPage');
+		homeModal.present();
 	}
 }

@@ -1,0 +1,21 @@
+page-home-modal {
+    ion-buttons>ion-icon {
+        height: 0px;
+        color: $sealions-gray-light;
+        padding-right: 10px;
+    }
+    [content] {
+        width: 100%;
+        padding: 20px;
+    }
+    [name] {
+        font-size: 18px;
+        font-weight: 600;
+        display: -webkit-box;
+        white-space: initial;
+    }
+    [description] {
+        font-size: 16px;
+        color: $sealions-gray-medium;
+    }
+}

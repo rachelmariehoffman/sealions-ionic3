@@ -13,7 +13,14 @@ export class SponsorPage {
 	sponsors: any;
 
 	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
+	// 	this.getData();
+	// }
 
+	// ngDoCheck() {
+	// 	this.getData();
+	// }
+
+	// getData() {
 		let url = "http://sealions.customersuccessmarketing.com/api/";
 
 		this.http.get(url + 'sealions-global-text').map(res => res.json()).subscribe(data => {
@@ -23,7 +30,6 @@ export class SponsorPage {
 		this.http.get(url + 'sealions-sponsors').map(res => res.json()).subscribe(data => {
 			this.sponsors = data.sponsors;
 		});
-
 	}
 
 	openModal(sponsor) {

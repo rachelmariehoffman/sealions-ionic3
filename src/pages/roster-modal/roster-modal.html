@@ -12,41 +12,41 @@
 
 <ion-content>
 
-    <div player>
-        <div picture>
-            <img player-photo [src]="player.headshot.src" alt="{{ player.headshot.alt }}" />
-            <div player-name>
-                <span text-overlay>
+    <!-- <div player> -->
+    <div picture>
+        <img player-photo [src]="player.headshot.src" alt="{{ player.headshot.alt }}" />
+        <div player-name>
+            <span text-overlay>
                     {{ player.first }} {{ player.last }}
                     &nbsp;&nbsp;<br>&nbsp;&nbsp;
                     <span *ngIf="player.jersey_number === '1001'">HC</span>
-                <span *ngIf="player.jersey_number === '1002'">AC</span>
-                <span *ngIf="player.jersey_number === '1003'">M</span>
-                <span *ngIf="player.jersey_number != '1001' && player.jersey_number != '1002' && player.jersey_number != '1003'">#{{player.jersey_number}}</span> {{player.position}}
-                </span>
-            </div>
-        </div>
-        <div content>
-            <span *ngIf="player.hometown">
-                <span title> Hometown </span>
-            <span body>{{ player.hometown }}</span>
-            <hr>
+            <span *ngIf="player.jersey_number === '1002'">AC</span>
+            <span *ngIf="player.jersey_number === '1003'">M</span>
+            <span *ngIf="player.jersey_number != '1001' && player.jersey_number != '1002' && player.jersey_number != '1003'">#{{player.jersey_number}}</span> {{player.position}}
             </span>
-            <span *ngIf="player.college">
-                <span title> College </span>
-            <span body>{{ player.college }}</span>
-            <hr>
-            </span>
-            <span *ngIf="player.years_with_sealions">
-                <span title> Years With Sealions </span>
-            <span body>{{ player.years_with_sealions }}</span>
-            <hr>
-            </span>
-            <span title> Player Bio </span>
-            <span body *ngIf="player.bio">{{ player.bio }}</span>
-            <span body *ngIf="!player.bio">Player bio coming soon!</span>
         </div>
     </div>
+    <div content>
+        <span *ngIf="player.hometown">
+                <span title> Hometown </span>
+        <span body>{{ player.hometown }}</span>
+        <hr>
+        </span>
+        <span *ngIf="player.college">
+                <span title> College </span>
+        <span body>{{ player.college }}</span>
+        <hr>
+        </span>
+        <span *ngIf="player.years_with_sealions">
+                <span title> Years With Sealions </span>
+        <span body>{{ player.years_with_sealions }}</span>
+        <hr>
+        </span>
+        <span title> Player Bio </span>
+        <span body *ngIf="player.bio">{{ player.bio }}</span>
+        <span body *ngIf="!player.bio">Player bio coming soon!</span>
+    </div>
+    <!-- </div> -->
 
 </ion-content>
 

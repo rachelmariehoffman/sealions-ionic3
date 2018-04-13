@@ -15,7 +15,6 @@ export class RosterModalPage {
 
 	ionViewWillLoad() {
 		this.player = this.navParams.get('data');
-		console.log(this.player);
 	}
 
 	closeModal() {

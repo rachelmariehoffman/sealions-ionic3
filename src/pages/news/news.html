@@ -8,10 +8,10 @@
 
 <ion-content>
 
-    <div global-text [innerHTML]="global"></div>
+    <div global-text [innerHTML]="databaseProvider.globalPosts"></div>
 
     <ion-list>
-        <ion-item no-lines *ngFor="let post of posts" (click)="openModal(post)">
+        <ion-item no-lines *ngFor="let post of databaseProvider.posts" (click)="openModal(post)">
 
             <div flex-grid post>
                 <div picture>

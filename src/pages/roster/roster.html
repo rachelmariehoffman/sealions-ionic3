@@ -7,9 +7,9 @@
 </ion-header>
 
 <ion-content>
-    <div global-text [innerHTML]="global"></div>
+    <div global-text [innerHTML]="databaseProvider.globalPlayers"></div>
     <ion-list>
-        <ion-item no-lines *ngFor="let player of players" (click)="openModal(player)">
+        <ion-item no-lines *ngFor="let player of databaseProvider.players" (click)="openModal(player)">
 
             <div flex-grid player>
                 <div picture>

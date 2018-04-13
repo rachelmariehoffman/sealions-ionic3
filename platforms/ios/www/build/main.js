@@ -132,16 +132,9 @@ var HomePage = (function () {
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        this.getData();
-        console.log('home constructor');
     }
-    HomePage.prototype.ngDoCheck = function () {
-        this.getData();
-        console.log('home ngDoCheck');
-    };
-    HomePage.prototype.getData = function () {
+    HomePage.prototype.ionViewDidEnter = function () {
         var _this = this;
-        console.log('home getData');
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].news_posts;
@@ -153,7 +146,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/`<ion-header>\n    <ion-navbar>\n        <ion-title>\n            SeaLions Home\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <h1>Content Change 12:11</h1>\n\n    <div landing-logo>\n\n        <img src="assets/imgs/sealions_logo.png">\n\n    </div>\n\n    <div global-text [innerHTML]="global"></div>\n\n    <div social-logos>\n\n        <a href="https://www.facebook.com/SanDiegoSeaLions">\n            <img src="assets/imgs/facebook.png" alt="Facebook Logo">\n        </a>\n\n        <a href="https://twitter.com/SDSeaLions">\n            <img src="assets/imgs/twitter.png" alt="Twitter Logo">\n        </a>\n\n        <a href="https://www.instagram.com/sd_sealions/">\n            <img src="assets/imgs/instagram.png" alt="Instagram Logo">\n        </a>\n\n        <a href="http://www.wpsl.info">\n            <img src="assets/imgs/color_wpsl_logo.png" alt="WPSL Logo">\n        </a>\n\n        <a href="http://sealionsoccer.com/">\n            <img src="assets/imgs/sealions_logo.png" alt="SeaLions Logo">\n        </a>\n\n    </div>\n\n    <button about-us (click)="openModal()">\n        Meet The Developers\n    </button>\n\n</ion-content>`/*ion-inline-end:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/`<ion-header>\n    <ion-navbar>\n        <ion-title>\n            SeaLions Home\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <div landing-logo>\n\n        <img src="assets/imgs/sealions_logo.png">\n\n    </div>\n\n    <div global-text [innerHTML]="global"></div>\n\n    <div social-logos>\n\n        <a href="https://www.facebook.com/SanDiegoSeaLions">\n            <img src="assets/imgs/facebook.png" alt="Facebook Logo">\n        </a>\n\n        <a href="https://twitter.com/SDSeaLions">\n            <img src="assets/imgs/twitter.png" alt="Twitter Logo">\n        </a>\n\n        <a href="https://www.instagram.com/sd_sealions/">\n            <img src="assets/imgs/instagram.png" alt="Instagram Logo">\n        </a>\n\n        <a href="http://www.wpsl.info">\n            <img src="assets/imgs/color_wpsl_logo.png" alt="WPSL Logo">\n        </a>\n\n        <a href="http://sealionsoccer.com/">\n            <img src="assets/imgs/sealions_logo.png" alt="SeaLions Logo">\n        </a>\n\n    </div>\n\n    <button about-us (click)="openModal()">\n        Meet The Developers\n    </button>\n\n</ion-content>`/*ion-inline-end:"/Users/rachelhoffman/Downloads/SanDiegoSealions/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
     ], HomePage);
@@ -192,16 +185,9 @@ var NewsPage = (function () {
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        this.getData();
-        console.log('news constructor');
     }
-    NewsPage.prototype.ngDoCheck = function () {
-        this.getData();
-        console.log('news ngDoCheck');
-    };
-    NewsPage.prototype.getData = function () {
+    NewsPage.prototype.ionViewDidEnter = function () {
         var _this = this;
-        console.log('news getData');
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].news_posts;
@@ -255,16 +241,9 @@ var CalendarPage = (function () {
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        this.getData();
-        console.log('calendar constructor');
     }
-    CalendarPage.prototype.ngDoCheck = function () {
-        this.getData();
-        console.log('calendar ngDoCheck');
-    };
-    CalendarPage.prototype.getData = function () {
+    CalendarPage.prototype.ionViewDidEnter = function () {
         var _this = this;
-        console.log('calendar getData');
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.logo = 'assets/imgs/sealions_logo.png';
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
@@ -324,16 +303,9 @@ var RosterPage = (function () {
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        this.getData();
-        console.log('roster constructor');
     }
-    RosterPage.prototype.ngDoCheck = function () {
-        this.getData();
-        console.log('roster ngDoCheck');
-    };
-    RosterPage.prototype.getData = function () {
+    RosterPage.prototype.ionViewDidEnter = function () {
         var _this = this;
-        console.log('roster getData');
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].roster;
@@ -387,16 +359,9 @@ var SponsorPage = (function () {
         this.navCtrl = navCtrl;
         this.http = http;
         this.modalCtrl = modalCtrl;
-        this.getData();
-        console.log('sponsor constructor');
     }
-    SponsorPage.prototype.ngDoCheck = function () {
-        this.getData();
-        console.log('sponsor ngDoCheck');
-    };
-    SponsorPage.prototype.getData = function () {
+    SponsorPage.prototype.ionViewDidEnter = function () {
         var _this = this;
-        console.log('sponsor getData');
         var url = "http://sealions.customersuccessmarketing.com/api/";
         this.http.get(url + 'sealions-global-text').map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.global = data.global_text[0].sponsors;

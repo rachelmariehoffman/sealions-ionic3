@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { ModalController } from 'ionic-angular';
+import { DatabaseProvider } from '../../providers/database';
 
 @Component({
 	selector: 'page-roster',
@@ -9,22 +8,12 @@ import 'rxjs/add/operator/map';
 })
 export class RosterPage {
 
-	global: any
-	players: any;
-
-	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
+	constructor(public modalCtrl: ModalController, public databaseProvider: DatabaseProvider) {
 	}
 
 	ionViewDidEnter() {
-		let url = "http://sealions.customersuccessmarketing.com/api/";
-
-		this.http.get(url + 'sealions-global-text').map(res => res.json()).subscribe(data => {
-			this.global = data.global_text[0].roster;
-		});
-
-		this.http.get(url + 'sealions-roster').map(res => res.json()).subscribe(data => {
-			this.players = data.players;
-		});
+		this.databaseProvider.getGlobal();
+		this.databaseProvider.getPlayers();
 	}
 
 	openModal(player) {

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { ModalController } from 'ionic-angular';
+import { DatabaseProvider } from '../../providers/database';
 
 @Component({
 	selector: 'page-calendar',
@@ -9,32 +8,18 @@ import 'rxjs/add/operator/map';
 })
 export class CalendarPage {
 
-	global: any;
-	logo: any;
-	games: any;
-
-	constructor(public navCtrl: NavController, public http: Http, public modalCtrl: ModalController) {
+	constructor(public modalCtrl: ModalController, public databaseProvider: DatabaseProvider) {
 	}
 
 	ionViewDidEnter() {	
-		let url = "http://sealions.customersuccessmarketing.com/api/";
-
-		this.logo = 'assets/imgs/sealions_logo.png';
-
-		this.http.get(url + 'sealions-global-text').map(res => res.json()).subscribe(data => {
-			this.global = data.global_text[0].game_schedule;
-			this.logo = data.global_text[0].sealions_logo;
-		});
-
-		this.http.get(url + 'sealions-games').map(res => res.json()).subscribe(data => {
-			this.games = data.games;
-		});
+		this.databaseProvider.getGlobal();
+		this.databaseProvider.getGames();
 	}
 
 	openModal(game) {
 		let gameInstance = {
 			game: game,
-			logo: this.logo
+			logo: this.databaseProvider.globalSealionsLogo
 		}
 		const calendarModal = this.modalCtrl.create('CalendarModalPage', { data: gameInstance });
 		calendarModal.present();

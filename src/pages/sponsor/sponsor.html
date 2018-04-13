@@ -7,9 +7,9 @@
 </ion-header>
 
 <ion-content>
-    <div global-text [innerHTML]="global"></div>
+    <div global-text [innerHTML]="databaseProvider.globalSponsors"></div>
     <ion-list>
-        <ion-item no-lines *ngFor="let sponsor of sponsors" (click)="openModal(sponsor)">
+        <ion-item no-lines *ngFor="let sponsor of databaseProvider.sponsors" (click)="openModal(sponsor)">
 
             <div flex-grid sponsor>
                 <div picture>

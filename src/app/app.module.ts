@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Calendar } from '@ionic-native/calendar';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { DatabaseProvider } from '../providers/database';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { LaunchNavigator } from '@ionic-native/launch-navigator';
     SplashScreen,
     Calendar,
     LaunchNavigator,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider
   ]
 })
 export class AppModule {}

@@ -15,7 +15,6 @@ export class NewsModalPage {
 
 	ionViewWillLoad() {
 		this.post = this.navParams.get('data');
-		console.log(this.post);
 	}
 
 	closeModal() {

@@ -8,10 +8,10 @@
 
 <ion-content>
 
-    <div global-text [innerHTML]="global"></div>
+    <div global-text [innerHTML]="databaseProvider.globalGames"></div>
 
     <ion-list>
-        <ion-item no-lines *ngFor="let game of games" (click)="openModal(game)">
+        <ion-item no-lines *ngFor="let game of databaseProvider.games" (click)="openModal(game)">
 
             <div flex-grid top *ngIf="game.home_or_away === 'Home'">
                 <div flex-col flex-left> SeaLions </div>
@@ -25,7 +25,7 @@
 
             <div flex-grid bottom>
                 <div flex-col flex-left>
-                    <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away === 'Home'">
+                    <img logo [src]="databaseProvider.globalSealionsLogo.src" alt="databaseProvider.globalSealionsLogo.alt" *ngIf="game.home_or_away === 'Home'">
                     <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away != 'Home'">
                 </div>
                 <div flex-col flex-middle>
@@ -39,7 +39,7 @@
                 </div>
                 <div flex-col flex-right>
                     <img logo [src]="game.opponent_logo.src" alt="game.opponent_logo.alt" *ngIf="game.home_or_away === 'Home'">
-                    <img logo [src]="logo.src" alt="logo.alt" *ngIf="game.home_or_away != 'Home'">
+                    <img logo [src]="databaseProvider.globalSealionsLogo.src" alt="databaseProvider.globalSealionsLogo.alt" *ngIf="game.home_or_away != 'Home'">
                 </div>
             </div>
 

@@ -22,7 +22,6 @@ export class SponsorModalPage {
 
 	ionViewWillLoad() {
 		this.sponsor = this.navParams.get('data');
-		console.log(this.sponsor);
 	}
 
 	closeModal() {

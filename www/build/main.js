@@ -533,7 +533,7 @@ var DatabaseProvider = (function () {
             _this.globalHome = data.global_text[0].home;
             _this.globalAbout = data.global_text[0].about;
             _this.globalPosts = data.global_text[0].news_posts;
-            _this.globalGames = data.global_text[0].games;
+            _this.globalGames = data.global_text[0].game_schedule;
             _this.globalPlayers = data.global_text[0].roster;
             _this.globalSponsors = data.global_text[0].sponsors;
             _this.globalSealionsLogo = data.global_text[0].sealions_logo;
@@ -566,9 +566,10 @@ var DatabaseProvider = (function () {
     };
     DatabaseProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], DatabaseProvider);
     return DatabaseProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=database.js.map

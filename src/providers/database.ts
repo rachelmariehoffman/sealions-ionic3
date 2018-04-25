@@ -35,7 +35,7 @@ export class DatabaseProvider {
 			this.globalHome = data.global_text[0].home;
 			this.globalAbout = data.global_text[0].about;
 			this.globalPosts = data.global_text[0].news_posts;
-			this.globalGames = data.global_text[0].games;
+			this.globalGames = data.global_text[0].game_schedule;
 			this.globalPlayers = data.global_text[0].roster;
 			this.globalSponsors = data.global_text[0].sponsors;
 			this.globalSealionsLogo = data.global_text[0].sealions_logo;

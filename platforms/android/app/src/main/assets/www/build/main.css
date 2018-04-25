@@ -25793,7 +25793,7 @@ ion-navbar.toolbar {
 ion-content,
 ion-navbar,
 ion-tabs {
-  font-family: "Lato";
+  font-family: "Lato", "Noto Sans";
 }
 
 ion-content,
@@ -25836,7 +25836,7 @@ ion-navbar > div ion-title > div {
 }
 
 button {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 50px;
   font-size: 16px;
   font-weight: 600;
@@ -25845,7 +25845,7 @@ button {
   background-color: #8191C4;
   border: 1px solid #8191C4;
   border-radius: 2px;
-  margin: 10px 0px;
+  margin: 10px;
 }
 
 [transparent] {
@@ -25945,6 +25945,7 @@ page-calendar-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
+  font-size: 25px;
 }
 
 page-calendar-modal [top] {
@@ -26033,6 +26034,35 @@ page-home [social-logos] img {
   height: 50px;
 }
 
+page-home [about-us] {
+  position: absolute;
+  bottom: 0px;
+}
+
+page-home-modal ion-buttons > ion-icon {
+  height: 0px;
+  color: #F6F6F6;
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+page-home-modal [content] {
+  width: 100%;
+  padding: 20px;
+}
+
+page-home-modal [full-name] {
+  font-size: 18px;
+  font-weight: 600;
+  display: -webkit-box;
+  white-space: initial;
+}
+
+page-home-modal [description] {
+  font-size: 16px;
+  color: #666666;
+}
+
 page-news [post] {
   background-color: white;
 }
@@ -26074,10 +26104,7 @@ page-news-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
-}
-
-page-news-modal [post] {
-  background-color: white;
+  font-size: 25px;
 }
 
 page-news-modal [picture] {
@@ -26169,10 +26196,7 @@ page-roster-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
-}
-
-page-roster-modal [player] {
-  background-color: white;
+  font-size: 25px;
 }
 
 page-roster-modal [picture] {
@@ -26259,10 +26283,6 @@ page-sponsor-modal ion-buttons > ion-icon {
   height: 0px;
   color: #F6F6F6;
   padding-right: 10px;
-}
-
-page-sponsor-modal [post] {
-  background-color: white;
 }
 
 page-sponsor-modal [picture] {
